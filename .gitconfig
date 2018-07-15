@@ -1,0 +1,33 @@
+[core]
+    autolf = true
+[user]
+    email = code@nuew.net
+    name = Ethan Welker
+    signingkey = EF711728588D799CD8853C5638918BE06D80FC7C
+[push]
+    default = simple
+    gpgSign = if-asked
+[commit]
+    gpgsign = true
+[merge]
+    tool = vimdiff
+[alias]
+    st = status
+    ci = commit
+    br = branch
+    co = checkout
+    df = diff
+    lg = log --oneline --graph --decorate
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan

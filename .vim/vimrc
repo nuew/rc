@@ -1,0 +1,51 @@
+se nocp
+exe pathogen#infect()
+
+" Vim Options (assumes vim-sensible)
+colo molokai
+se cf hi=10000 sc " Prompt
+se dict+=/usr/share/dict/words spl=en_us,en " Spellchecking
+se enc=utf-8 nostmp " Internal
+se et sts=4 sw=4 " Tabs
+"se fdm=syntax fdls=99 " Folding
+se fo=croqj si " Formatting
+se hls ic scs " Search
+se lcs=tab:↹·,trail:␢,extends:⇉,precedes:⇇,nbsp:␣ sbr=↳\  " Display
+se lz tf " Drawing
+se mouse=a ttymouse=xterm2 " Mouse
+se nobomb " Encoding
+se nosol " Movement
+se udir=~/.vim/undo udf " Undo
+
+" Filetype Options
+au FileType gitcommit,mail,tex,text setlocal spell complete+=kspell
+au FileType make setlocal noet sw=8 sts=0
+au FileType tex,text setlocal tw=80 noai nocin nosi inde=
+
+" TODO Make vimdiff legible
+
+" Syntastic Options
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_style_error_symbol = "☡"
+let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_style_warning_symbol = "❦"
+"let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
+
+" Rust Options
+let g:syntastic_rust_checkers = ['cargo']
+"let g:rustfmt_autosave = 1
+
+" GPG Options
+let g:GPGPreferSymmetric = 1
+let g:GPGUsePipes = 1
+
+" Custom Digraphs
+dig -b 8226 " U+2022 • BULLET
+dig -^ 8227 " U+2023 ‣ TRIANGULAR BULLET
+dig ?! 8253 " U+204d ‽ INTERROBANG
+dig *: 8258 " U+2042 ⁂ ASTERISM
+dig h- 8463 " U+210F ℏ PLANCK CONSTANT OVER TWO PI
+dig @> 8635 " U+21BB ↻ CLOCKWISE OPEN CIRCLE ARROW

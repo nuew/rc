@@ -1,0 +1,12 @@
+set bell-style visual
+set colored-completion-prefix on
+set completion-ignore-case on
+set completion-map-case on
+set editing-mode vi
+set mark-symlinked-directories on
+set show-all-if-ambiguous on
+
+#TAB: menu-complete
+#"\e[Z": menu-complete-backward
+
+$include /etc/inputrc
