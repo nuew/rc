@@ -108,6 +108,7 @@ bar {
 
 # Misc Programs
 bindsym Print exec "$HOME/.config/i3/full_screenshot.sh $HOME/media/$(date '+%FT%T%z').png"
+bindsym Shift+Print exec "import -window $(xdotool getwindowfocus) $HOME/media/$(date '+%FT%T%z').png"
 bindsym XF86HomePage exec firefox
 bindsym XF86Search exec "firefox https://google.com/"
 bindsym XF86Mail exec "urxvtc -e mutt"
