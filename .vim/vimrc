@@ -36,7 +36,7 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['tex'] }
 
 " Rust Options
 let g:syntastic_rust_checkers = ['cargo']
-"let g:rustfmt_autosave = 1
+let g:rustfmt_autosave = 1
 
 " GPG Options
 let g:GPGPreferSymmetric = 1
