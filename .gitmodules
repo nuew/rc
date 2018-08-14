@@ -17,5 +17,5 @@
 	path = .vim/bundle/vim-sensible
 	url = git://github.com/tpope/vim-sensible.git
 [submodule ".weechat/wee-slack"]
-	path = .weechat/wee-slack
+	path = .config/weechat/wee-slack
 	url = https://github.com/wee-slack/wee-slack.git

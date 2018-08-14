@@ -16,6 +16,7 @@ se mouse=a ttymouse=xterm2 " Mouse
 se nobomb " Encoding
 se nosol " Movement
 se udir=~/.vim/undo udf " Undo
+se vif=~/.vim/info "viminfo
 
 " Filetype Options
 au FileType gitcommit,mail,tex,text setlocal spell complete+=kspell

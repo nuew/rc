@@ -4,7 +4,7 @@ set $mod Mod4
 floating_modifier $mod
 
 # Autostart
-exec xrdb ~/.Xresources
+exec xrdb ~/.config/X11/resources
 exec bash -c "[ -z $(pgrep -u $USER urxvtd) ] && exec urxvtd"
 
 # Quicklaunch

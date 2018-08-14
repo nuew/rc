@@ -23,6 +23,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PS1="\w"'$(ps1_maybe_ev)\$ ' PS2="> " PS3="% " PS4="+ "
 
 export GPG_TTY=$(tty)
+export LESSHISTFILE=-
 
 # Aliases
 alias RM='rm -rf'
