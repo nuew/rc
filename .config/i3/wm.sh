@@ -18,7 +18,7 @@ else
   pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
 
   # Redshift
-  redshift -l 40.47:-79.95 -m randr -P -t 6500:3250 &
+  redshift -l 40.47:-79.95 -m randr -P -t 6500:4500 &
 
   # Systemd lock daemon
   xss-lock -- "$HOME/.config/i3/lock.sh" &
