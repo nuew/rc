@@ -13,8 +13,6 @@ export XDG_DESKTOP_DIR XDG_DOWNLOAD_DIR XDG_TEMPLATES_DIR XDG_PUBLICSHARE_DIR \
        XDG_DOCUMENTS_DIR XDG_MUSIC_DIR XDG_PICTURES_DIR XDG_VIDEOS_DIR
 
 # Deal with some cooperative but nonconforming programs
-mkdir -p "$XDG_CACHE_HOME/openssl"
-
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; \
                     personal $XDG_CONFIG_HOME/aspell/en.pws; \
                     repl $XDG_CONFIG_HOME/aspell/en.prepl"
@@ -22,7 +20,7 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export DVDCSS_CACHE="$XDG_DATA_HOME/dvdcss"
 export GNUPGHOME="$XDG_CONFIG_HOME/gnupg"
 export INPUTRC="$XDG_CONFIG_HOME/readline/inputrc"
-export RANDFILE="$XDG_CACHE_HOME/openssl/rnd"
+export RANDFILE="$XDG_CACHE_HOME/rnd"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 export WEECHAT_HOME="$XDG_CONFIG_HOME/weechat"
