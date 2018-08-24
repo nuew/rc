@@ -11,6 +11,8 @@
     gpgsign = true
 [merge]
     tool = vimdiff
+[diff]
+    algorithm = patience
 [alias]
     st = status
     ci = commit
