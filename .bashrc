@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Computer Specific Operations
+if [ "$HOSTNAME" = "nuew" ]; then
+    dfsub=prog
+elif [ "$HOSTNAME" = "thoth.cs.pitt.edu" ]; then
+    dfsub=private
+    source /opt/set_specific_profile.sh
+fi
+
 # VT Escape Sequences
 FONT0="\e(" FONT1="\e)"
 RESET="\e[0m" BRIGHT="\e[1m" DIM="\e[2m" UNDERSCORE="\e[4m" \
@@ -17,9 +25,10 @@ function ps1_maybe_ev {
     local ev=$?; [ $ev != 0 ] && echo -e " $ev"
 }
 
-export EDITOR=/usr/bin/vim PAGER=/usr/bin/less SHELL=/bin/bash
+export EDITOR=vim PAGER=less SHELL=bash
 export HISTSIZE=10000 HISTCONTROL=ignoredups
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
+export MANPATH="$HOME/.local/share/man:$MANPATH"
 export PS1="\w"'$(ps1_maybe_ev)\$ ' PS2="> " PS3="% " PS4="+ "
 
 export GPG_TTY=$(tty)
@@ -29,7 +38,7 @@ export LESSHISTFILE=-
 alias RM='rm -rf'
 alias cargo-fmt='rustup run nightly cargo fmt'
 alias dig=drill
-alias dotfiles="git --git-dir=$HOME/prog/dotfiles/ --work-tree=$HOME"
+alias dotfiles="git --git-dir=$HOME/$dfsub/dotfiles/ --work-tree=$HOME"
 alias grep='echo "Consider using rg, or use /usr/bin/grep."'
 alias less='less -R'
 alias ls='ls -h --color=auto --group-directories-first'
@@ -147,3 +156,5 @@ alias g++rel="g++ -std=gnu++14 $gcc_release_options"
 
 # Programmable Completions
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
+
+unset dfsub
