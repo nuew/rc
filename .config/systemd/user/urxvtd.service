@@ -1,0 +1,11 @@
+[Unit]
+Description=urxvt terminal daemon
+Documentation=man:urxvtd(1)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/urxvtd
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
