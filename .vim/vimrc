@@ -1,5 +1,4 @@
 se nocp
-exe pathogen#infect()
 
 " Vim Options (assumes vim-sensible)
 colo molokai
