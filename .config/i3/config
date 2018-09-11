@@ -7,7 +7,8 @@ floating_modifier $mod
 exec xrdb ~/.config/X11/resources
 
 # Quicklaunch
-bindsym $mod+Return exec urxvtc -e /bin/bash
+bindsym $mod+Return exec urxvtc -e /usr/bin/tmux attach-session
+bindsym $mod+Shift+Return exec urxvtc -e /bin/bash
 bindsym $mod+Mod1+l exec loginctl lock-session
 
 # Change Active Window
