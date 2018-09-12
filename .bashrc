@@ -56,10 +56,6 @@ alias traceroute=tracepath
 alias weather='curl -s http://wttr.in/Pittsburgh?m'
 
 # Functions
-function cconv {
-    curl -s "https://finance.google.com/finance/converter?a=$1&from=$2&to=$3" | \
-        sed "/res/!d;s/<[^>]*>//g"
-}
 function define { # Get the definition of a word from Wiktionary
     curl -s "https://en.wiktionary.org/wiki/$1?action=raw" | \
         sed -f "$HOME/prog/wikifmt.sed"
