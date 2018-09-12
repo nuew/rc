@@ -19,6 +19,7 @@ BLACKBG="\e[40m" REDBG="\e[41m" GREENBG="\e[42m" YELLOWBG="\e[43m" \
 
 # Shell Options
 shopt -s autocd cdspell extglob globstar histappend no_empty_cmd_completion
+set -o vi
 
 # Environment
 function ps1_maybe_ev {
