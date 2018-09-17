@@ -3,13 +3,16 @@
 set $mod Mod4
 floating_modifier $mod
 
-# Autostart
-exec xrdb ~/.config/X11/resources
-
 # Quicklaunch
 bindsym $mod+Return exec urxvtc -e /usr/bin/tmux attach-session
 bindsym $mod+Shift+Return exec urxvtc -e /bin/bash
 bindsym $mod+Mod1+l exec loginctl lock-session
+bindsym XF86HomePage exec firefox
+bindsym XF86Search exec "firefox https://google.com/"
+bindsym XF86Mail exec "urxvtc -e mutt"
+
+bindsym Print exec "import -window root $HOME/media/$(date '+%FT%T%z').png"
+bindsym Shift+Print exec "import -window $(xdotool getwindowfocus) $HOME/media/$(date '+%FT%T%z').png"
 
 # Change Active Window
 bindsym $mod+h focus left
@@ -39,6 +42,18 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# Workspaces
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -52,27 +67,27 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        bindsym $mod+h resize shrink width 10 px or 10 ppt
-        bindsym $mod+j resize grow height 10 px or 10 ppt
-        bindsym $mod+k resize shrink height 10 px or 10 ppt
-        bindsym $mod+l resize grow width 10 px or 10 ppt
-        bindsym $mod+Left resize shrink width 10 px or 10 ppt
-        bindsym $mod+Down resize grow height 10 px or 10 ppt
-        bindsym $mod+Up resize shrink height 10 px or 10 ppt
-        bindsym $mod+Right resize grow width 10 px or 10 ppt
+    bindsym $mod+h resize shrink width 10 px or 10 ppt
+    bindsym $mod+j resize grow height 10 px or 10 ppt
+    bindsym $mod+k resize shrink height 10 px or 10 ppt
+    bindsym $mod+l resize grow width 10 px or 10 ppt
+    bindsym $mod+Left resize shrink width 10 px or 10 ppt
+    bindsym $mod+Down resize grow height 10 px or 10 ppt
+    bindsym $mod+Up resize shrink height 10 px or 10 ppt
+    bindsym $mod+Right resize grow width 10 px or 10 ppt
 
-        bindsym $mod+Return mode "default"
-        bindsym $mod+Escape mode "default"
+    bindsym $mod+Return mode "default"
+    bindsym $mod+Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
 # WM Commands
 font pango:DejaVu Sans Mono 10
 
-bindsym $mod+d exec j4-dmenu-desktop --no-generic --term urxvtc
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec bash -c "zenity --question --title='Logout?' --text='Are you sure you want to logout?' && ( swaymsg exit || i3 exit )"
+bindsym $mod+Shift+e exec "i3-nagbar -m 'Really end your session?' -b 'OK' 'i3 exit' -t warning"
 
 bindsym $mod+g split h
 bindsym $mod+v split v
@@ -95,40 +110,20 @@ bindsym XF86AudioMute exec "amixer set Master toggle"
 
 # Bar
 bar {
-  font pango:DejaVu Sans Mono 8
-  status_command i3status
-  position top
-  mode hide
-  modifier $mod
+    font pango:DejaVu Sans Mono 8
+    status_command i3status
+    position top
+    mode hide
+    modifier $mod
 
-  colors {
-    background #000000E6
-  }
+    colors {
+        background #000000E6
+    }
 }
-
-# Misc Programs
-bindsym Print exec "$HOME/.config/i3/full_screenshot.sh $HOME/media/$(date '+%FT%T%z').png"
-bindsym Shift+Print exec "import -window $(xdotool getwindowfocus) $HOME/media/$(date '+%FT%T%z').png"
-bindsym XF86HomePage exec firefox
-bindsym XF86Search exec "firefox https://google.com/"
-bindsym XF86Mail exec "urxvtc -e mutt"
-
-# Workspaces
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
 
 # Autofloat Dialogs
 for_window [title="Preferences$"] floating enable
 for_window [title="Options$"] floating enable
-for_window [title="^Logout?$"] floating enable
 for_window [title="^pinentry$"] floating enable
 
 # Borders
@@ -144,8 +139,14 @@ for_window [class="Steam"] border none
 # ... but don't float the main one
 for_window [title="^Steam$"] floating disable 
 
-# WM Specific Settings
-exec $HOME/.config/i3/wm.sh
-
-# Background Switching
+# Autostart
 exec $HOME/.config/i3/backgroundctl.sh 5m
+exec redshift -l 40.47:-79.95 -m randr -P -t 6500:4000
+exec setxkbmap -layout us -variant alt-intl-unicode -option caps:super
+exec xcompmgr -cfCF
+exec xrdb $HOME/.config/X11/resources
+exec xss-lock -- $HOME/.config/i3/lock.sh
+
+# Pulse Audio Bell (It's imporant that these are synchronous)
+exec pactl upload-sample /usr/share/sounds/freedesktop/stereo/bell.oga x11-bell
+exec pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
