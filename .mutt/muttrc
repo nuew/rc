@@ -1,0 +1,113 @@
+# Cache things locally
+set header_cache = ~/.cache/mutt/headers
+set message_cachedir = ~/.cache/mutt/messages
+
+# Auto Clear the caches
+source "~/.mutt/purgecache.sh '$header_cache'|"
+source "~/.mutt/purgecache.sh '$message_cachedir'|"
+
+# Keep IMAP connection alive
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 30
+set mbox_type = Maildir
+
+# We don't use POP
+bind index G imap-fetch-mail
+
+# Global Settings
+set send_charset = "utf-8"
+set edit_headers = yes
+set editor = "vim +13 -c 'set tw=72 syntax=mail ft=mail enc=utf-8 nobackup noswapfile nowritebackup'"
+set pager_index_lines = 8
+set realname = "Ethan Welker"
+alternates "nuew@nuew.net"|"code@nuew.net"|"r2ethan2@gmail.com"|"ethanwelker@pitt.edu"
+
+# Header Display
+ignore *
+unignore from: subject to cc date x-mailer x-url user-agent
+hdr_order date from to cc subject
+
+# Sorting
+set sort = threads
+set strict_threads = yes
+set sort_aux = last-date-received
+
+# Source some other files
+set certificate_file = "~/.mutt/certificates"
+source ~/.mutt/colors
+
+# Mutt Aliases
+set alias_file = "~/.mutt/aliases"
+set sort_alias = alias
+set reverse_alias = yes
+source ~/.mutt/aliases
+
+# Setup default file openers
+set mailcap_path = ~/.mutt/mailcap
+alternative_order text/enriched text/plain text/html 
+auto_view text/html
+mime_lookup application/octet-stream
+
+# Security Stuff
+set crypt_autosign = no
+set crypt_opportunistic_encrypt = yes
+set crypt_replyencrypt = yes
+set crypt_replysign = yes
+set crypt_replysignencrypted = yes
+set crypt_timestamp = yes
+set crypt_use_gpgme = yes
+set pgp_auto_decode = yes
+set pgp_sign_as = 0x38918BE06D80FC7C
+set pgp_timeout = 3600
+set pgp_use_gpg_agent = yes
+set ssl_force_tls = yes
+set ssl_starttls = yes
+set ssl_use_sslv2 = no
+set ssl_use_sslv3 = no
+set ssl_use_tlsv1 = no
+set ssl_use_tlsv1_1 = no
+set ssl_verify_dates = yes
+set ssl_verify_host = yes
+
+# Clickable URLS
+set display_filter="$HOME/.mutt/tagurl.pl -o /tmp/mutt-$(id -un)-$(id -u)-url-macros"
+macro pager 1 "<shell-escape>~/.mutt/tagurl_open.sh 1<enter>" "Open URL 1"
+macro pager 2 "<shell-escape>~/.mutt/tagurl_open.sh 2<enter>" "Open URL 2"
+macro pager 3 "<shell-escape>~/.mutt/tagurl_open.sh 3<enter>" "Open URL 3"
+macro pager 4 "<shell-escape>~/.mutt/tagurl_open.sh 4<enter>" "Open URL 4"
+macro pager 5 "<shell-escape>~/.mutt/tagurl_open.sh 5<enter>" "Open URL 5"
+macro pager 6 "<shell-escape>~/.mutt/tagurl_open.sh 6<enter>" "Open URL 6"
+macro pager 7 "<shell-escape>~/.mutt/tagurl_open.sh 7<enter>" "Open URL 7"
+macro pager 8 "<shell-escape>~/.mutt/tagurl_open.sh 8<enter>" "Open URL 8"
+macro pager 9 "<shell-escape>~/.mutt/tagurl_open.sh 9<enter>" "Open URL 9"
+
+# KeyBinds
+bind pager j next-line
+bind pager k previous-line
+bind pager g top
+bind pager G bottom
+bind attach <return> view-mailcap
+bind attach m view-attach
+
+# Decrypt Passwords
+source "gpg -dq ~/.mutt/mail-pws.gpg |"
+
+# erw71@pitt.edu account
+source "~/.mutt/mypitt"
+folder-hook $folder 'source ~/.mutt/mypitt'
+
+# SMTP direct from mailgun
+source "~/.mutt/nuew"
+
+# r2ethan2@gmail.com Account
+source "~/.mutt/r2ethan2"
+folder-hook $folder 'source ~/.mutt/r2ethan2'
+
+# Account Shortcuts
+macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/r2ethan2<enter><change-folder>!<enter>'
+macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/mypitt<enter><change-folder>!<enter>'
+macro index,pager <f4> '<enter-command>source ~/.mutt/nuew<enter>'
+
+# Listen for mail in inbox and mailing lists
+mailboxes "+INBOX"

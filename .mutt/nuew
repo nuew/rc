@@ -1,0 +1,5 @@
+# SMTP Settings
+set smtp_url = smtps://postmaster@nuew.net@smtp.mailgun.org/
+set smtp_pass = $my_nuew_pass
+unset hostname
+set from = "nuew@nuew.net"
