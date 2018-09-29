@@ -9,10 +9,10 @@
 	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/vim-characterize"]
 	path = .vim/pack/plugins/start/vim-characterize
-	url = git://github.com/tpope/vim-characterize.git
+	url = https://github.com/tpope/vim-characterize.git
 [submodule ".vim/bundle/vim-gnupg"]
 	path = .vim/pack/plugins/start/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/pack/plugins/start/vim-sensible
-	url = git://github.com/tpope/vim-sensible.git
+	url = https://github.com/tpope/vim-sensible.git
