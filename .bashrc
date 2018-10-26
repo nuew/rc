@@ -73,7 +73,8 @@ function gendiceware { # Generate a diceware-style password
 
     sed "/'/d" /usr/share/dict/words | \
         shuf -rn ${l} --random-source=/dev/urandom | \
-        sed -z 's/\n/ /g'
+        tr [:upper:] [:lower:] | \
+        sed -z 's/\n//g'
     echo
 }
 function savedvd { # Save an ISO of the inserted DVD to disk
