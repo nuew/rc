@@ -20,7 +20,7 @@ set send_charset = "utf-8"
 set edit_headers = yes
 set editor = "vim +13 -c 'set tw=72 syntax=mail ft=mail enc=utf-8 nobackup noswapfile nowritebackup'"
 set pager_index_lines = 8
-set realname = "Ethan Welker"
+set realname = "Emma Welker"
 alternates "nuew@nuew.net"|"code@nuew.net"|"r2ethan2@gmail.com"|"ethanwelker@pitt.edu"
 
 # Header Display

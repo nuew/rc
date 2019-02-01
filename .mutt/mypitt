@@ -7,7 +7,7 @@ set folder = imaps://outlook.office365.com/
 set smtp_url = smtp://$imap_user@outlook.office365.com:587/
 set smtp_pass = $my_mypitt_pass
 set hostname = pitt.edu
-set from = ethanwelker@pitt.edu
+set from = erw71@pitt.edu
 
 # FS Settings
 set spoolfile = +INBOX
