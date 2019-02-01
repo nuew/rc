@@ -2,8 +2,8 @@
 # An incredibly simple background switcher
 
 # so named for historical reasons
-output_1=DVI-I-1
-output_2=DVI-D-1
+output_1=DisplayPort-1
+output_2=HDMI-A-1
 
 main() {
     get_background() {
