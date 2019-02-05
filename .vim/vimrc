@@ -40,7 +40,6 @@ let g:rustfmt_autosave = 1
 
 " GPG Options
 let g:GPGPreferSymmetric = 1
-let g:GPGUsePipes = 1
 
 " Custom Digraphs
 dig -b 8226 " U+2022 • BULLET
