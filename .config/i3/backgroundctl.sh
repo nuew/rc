@@ -8,7 +8,7 @@ output_2=HDMI-A-1
 main() {
     get_background() {
         find "$HOME/media/wallpapers/$1" -type f -iregex "^.*\.\(jpg\|png\)$" \
-            -print0 | shuf -zn 1
+            -print0 | shuf -zn 1 | tr -d '\0'
     }
 
     feh --no-fehbg  --bg-max "$(get_background $output_1)" \
