@@ -26,7 +26,7 @@ function ps1_maybe_ev {
     local ev=$?; [ $ev != 0 ] && echo -e " $ev"
 }
 
-export EDITOR=vim PAGER=less SHELL=bash
+export EDITOR=vim PAGER='less -RM' SHELL=bash
 export HISTSIZE=10000 HISTCONTROL=ignoredups
 export PATH="$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
@@ -42,7 +42,7 @@ alias cargo-fmt='rustup run nightly cargo fmt'
 alias dig=drill
 alias dotfiles="git --git-dir=$HOME/$dfsub/dotfiles/ --work-tree=$HOME"
 alias grep='echo "Consider using rg, or use /usr/bin/grep."'
-alias less='less -R'
+alias less="$PAGER"
 alias ls='ls -h --color=auto --group-directories-first'
 alias lualatex='lualatex --shell-escape'
 alias nc=ncat
