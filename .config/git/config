@@ -2,7 +2,7 @@
     autolf = true
 [user]
     email = code@nuew.net
-    name = Emma Welker
+    name = nuew
     signingkey = EF711728588D799CD8853C5638918BE06D80FC7C
 [push]
     default = simple
