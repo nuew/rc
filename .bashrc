@@ -30,7 +30,7 @@ export EDITOR=vim PAGER='less -RM' SHELL=bash
 export HISTSIZE=10000 HISTCONTROL=ignoredups
 export PATH="$HOME/.local/bin:$PATH:$HOME/.cargo/bin"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
-export LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="$HOME/.local/lib"
 export PS1="\w"'$(ps1_maybe_ev)\$ ' PS2="> " PS3="% " PS4="+ "
 
 export GPG_TTY=$(tty)
