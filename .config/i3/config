@@ -141,7 +141,7 @@ for_window [title="^Steam$"] floating disable
 
 # Autostart
 exec $HOME/.config/i3/backgroundctl.sh 5m
-exec redshift -l 40.47:-79.95 -m randr -P -t 6500:4000
+exec redshift -l 40.47:-79.95 -m randr -P -t 6500:4500
 exec setxkbmap -layout us -variant alt-intl-unicode -option caps:super
 exec xcompmgr -cfCF
 exec xrdb $HOME/.config/X11/resources
