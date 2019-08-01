@@ -87,7 +87,7 @@ font pango:DejaVu Sans Mono 10
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec "i3-nagbar -m 'Really end your session?' -b 'OK' 'i3 exit' -t warning"
+bindsym $mod+Shift+e exec "i3-nagbar -m 'Really end your session?' -b 'Yes, end session' 'i3 exit' -t warning"
 
 bindsym $mod+g split h
 bindsym $mod+v split v
