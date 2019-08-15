@@ -1,18 +1,19 @@
 #!/bin/bash
 # An incredibly simple background switcher
 
-# so named for historical reasons
-output_1=DisplayPort-1
-output_2=HDMI-A-1
+DISPLAYS="DP-2 HDMI-A-2"
 
-main() {
+update_background() {
     get_background() {
         find "$HOME/media/wallpapers/$1" -type f -iregex "^.*\.\(jpg\|png\)$" \
             -print0 | shuf -zn 1 | tr -d '\0'
     }
 
-    feh --no-fehbg  --bg-max "$(get_background $output_1)" \
-                    --bg-max "$(get_background $output_2)"
+    swaymsg output "$1" background "$(get_background $1)" fit
+}
+
+main() {
+    for display in $DISPLAYS; do update_background $display; done
 }
 
 loop() {
