@@ -42,6 +42,7 @@ exec {
     pactl load-module module-x11-bell sample=x11-bell display=$DISPLAY
 }
 
+
 # Keybindings
 set $mod Mod4
 floating_modifier $mod
@@ -187,10 +188,7 @@ bar {
 ## Application-specific customizations
 for_window {
     [title="Preferences$|Options$|^pinentry$"] floating enable # autofloat dialogs
-    [class="^URxvt$"] {
-        border pixel 1 # custom border, but no titlebar, for urxvt
-        opacity 0.9 # 90% opaque
-    }
+    [class="^URxvt$"] border pixel 1 # custom border, but no titlebar, for urxvt
     [class="^ck2$|^eu4$"] floating enable # autofloat some games
     [class="Steam"] {
         border none # steam windows shouldn't have a border

@@ -2,7 +2,7 @@ Xcursor.theme: Adwaita
 Xcursor.size: 16
 
 ! URxvt config
-URxvt*background:         #000000
+URxvt*background:         [90]#000000
 URxvt*color0:             #2e3436
 URxvt*color10:            #8ae234
 URxvt*color11:            #fce94f
