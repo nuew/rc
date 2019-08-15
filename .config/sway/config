@@ -33,9 +33,9 @@ exec {
         timeout 300 '$XDG_CONFIG_HOME/sway/lock.sh' \
         timeout 600 'swaymsg "output * dpms off"' \
              resume 'swaymsg "output * dpms on"'
+    $XDG_CONFIG_HOME/sway/backgroundctl.sh 5m
     mako
-
-    xrdb $HOME/.config/X11/resources
+    xrdb $XDG_CONFIG_HOME/X11/resources
 
     # Pulse Audio Bell (It's imporant that these are synchronous)
     pactl upload-sample /usr/share/sounds/freedesktop/stereo/bell.oga x11-bell
