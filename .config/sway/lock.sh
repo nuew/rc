@@ -11,10 +11,10 @@ take_decorate_screenshot() {
     echo "$screenshot"
 }
 
-umask 600
+umask u+rw,go-rwx
 
 screenshot_DP_2=$(take_decorate_screenshot DP-2)
 screenshot_HDMI_A_2=$(take_decorate_screenshot HDMI-A-2)
 
-swaylock -i DP-2:"$screenshot_DP_2" -i HDMI-A-2:"$screenshot_HDMI_A_2"
+swaylock -fi DP-2:"$screenshot_DP_2" -i HDMI-A-2:"$screenshot_HDMI_A_2"
 rm "$screenshot_DP_2" "$screenshot_HDMI_A_2"

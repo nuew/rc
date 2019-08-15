@@ -27,12 +27,12 @@ input "6940:6917:Corsair_Corsair_M65_Gaming_Mouse" {
 
 # Autostart
 exec {
-    swayidle -w \
-        before-sleep '$XDG_CONFIG_HOME/sway/lock.sh' \
-        lock '$XDG_CONFIG_HOME/lock.sh' \
+    swayidle -dw \
         timeout 300 '$XDG_CONFIG_HOME/sway/lock.sh' \
         timeout 600 'swaymsg "output * dpms off"' \
-             resume 'swaymsg "output * dpms on"'
+             resume 'swaymsg "output * dpms on"' \
+        before-sleep '$XDG_CONFIG_HOME/sway/lock.sh' \
+        lock '$XDG_CONFIG_HOME/sway/lock.sh'
     $XDG_CONFIG_HOME/sway/backgroundctl.sh 5m
     mako
     xrdb $XDG_CONFIG_HOME/X11/resources
