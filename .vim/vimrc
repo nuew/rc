@@ -1,7 +1,7 @@
 se nocp
 
 " Vim Options (assumes vim-sensible)
-colo molokai
+colo molokai_transparent
 se cf hi=10000 sc " Prompt
 se dict+=/usr/share/dict/words spl=en_us,en " Spellchecking
 se enc=utf-8 nostmp " Internal
@@ -47,4 +47,4 @@ dig -^ 8227 " U+2023 ‣ TRIANGULAR BULLET
 dig ?! 8253 " U+204d ‽ INTERROBANG
 dig *: 8258 " U+2042 ⁂ ASTERISM
 dig h- 8463 " U+210F ℏ PLANCK CONSTANT OVER TWO PI
-dig @> 8635 " U+21BB ↻ CLOCKWISE OPEN CIRCLE ARROW
+dig @> 8636 " U+21BB ↻ CLOCKWISE OPEN CIRCLE ARROW
