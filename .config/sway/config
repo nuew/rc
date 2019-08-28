@@ -140,7 +140,8 @@ bindsym $mod+r mode "resize"
 
 ## WM Commands
 bindsym {
-    $mod+d exec --no-startup-id "$XDG_CONFIG_HOME/sway/dmenu-desktop.pl"
+    $mod+d exec --no-startup-id "BEMENU_BACKEND=wayland $XDG_CONFIG_HOME/sway/dmenu-desktop.pl \
+                                 --dmenu 'bemenu -p $(cat /etc/hostname)'"
     $mod+Shift+r reload
     $mod+Shift+e exec "swaynag -m 'Really end your session?' -b 'Yes, end session' 'swaymsg exit' -t warning"
 
