@@ -446,22 +446,7 @@ if (exists($app->{Path}) && $app->{Path} ne '') {
 my $nosn = '';
 my $cmd;
 if (exists($app->{Terminal}) && $app->{Terminal}) {
-    # For applications which specify “Terminal=true” (e.g. htop.desktop),
-    # we need to create a temporary script that contains the full command line
-    # as the syntax for starting commands with arguments varies from terminal
-    # emulator to terminal emulator.
-    # Then, we launch that script with i3-sensible-terminal.
-    my ($fh, $filename) = tempfile();
-    binmode($fh, ':utf8');
-    say $fh <<EOT;
-#!/bin/sh
-rm $filename
-exec $exec
-EOT
-    close($fh);
-    chmod 0755, $filename;
-
-    $cmd = qq|exec i3-sensible-terminal -e "$filename"|;
+    $cmd = qq|exec urxvtc -e "$exec"|;
 } else {
     # i3 executes applications by passing the argument to i3’s “exec” command
     # as-is to $SHELL -c. The i3 parser supports quoted strings: When a string
