@@ -1,0 +1,15 @@
+[Appearance]
+Translucency=true
+
+[Desktop Entry]
+DefaultProfile=Standard.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=
+
+[Window]
+DynamicTabTitles=true
+KeepOpen=false
