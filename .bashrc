@@ -32,7 +32,7 @@ export LESSHISTFILE=-
 alias RM='rm -rf'
 alias cargo-fmt='rustup run nightly cargo fmt'
 alias dig=drill
-alias dotfiles="git --git-dir=$HOME/$dfsub/dotfiles/ --work-tree=$HOME"
+alias dotfiles="git --git-dir=$HOME/prog/dotfiles/ --work-tree=$HOME"
 alias less="$PAGER"
 alias ls='ls -h --color=auto --group-directories-first'
 alias lualatex='lualatex --shell-escape'
