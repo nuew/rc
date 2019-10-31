@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# Computer Specific Operations
-if [ "$HOSTNAME" = "nuew" ]; then
-    dfsub=prog
-elif [ "$HOSTNAME" = "thoth.cs.pitt.edu" ]; then
-    dfsub=private
-    source /opt/set_specific_profile.sh
-fi
-
 # VT Escape Sequences
 FONT0="\e(" FONT1="\e)"
 RESET="\e[0m" BRIGHT="\e[1m" DIM="\e[2m" UNDERSCORE="\e[4m" \
@@ -41,7 +33,6 @@ alias RM='rm -rf'
 alias cargo-fmt='rustup run nightly cargo fmt'
 alias dig=drill
 alias dotfiles="git --git-dir=$HOME/$dfsub/dotfiles/ --work-tree=$HOME"
-alias grep='echo "Consider using rg, or use /usr/bin/grep."'
 alias less="$PAGER"
 alias ls='ls -h --color=auto --group-directories-first'
 alias lualatex='lualatex --shell-escape'
