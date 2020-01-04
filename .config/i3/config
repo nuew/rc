@@ -134,6 +134,7 @@ for_window [title="^Steam$"] floating disable # except the main window should
 # i3-specific stuff that will be overwritten or ignored
 exec "$HOME/.config/i3/backgroundctl.sh"
 exec "$HOME/.config/i3/compositor.sh"
+exec "$HOME/.config/i3/lock.sh --daemon"
 
 ## Screenshots
 bindsym Print exec "import -window root $HOME/media/$(date '+%FT%T%z').png

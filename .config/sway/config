@@ -43,7 +43,7 @@ exec {
 ## Screenshots
 bindsym --no-warn {
     Print exec "grim $HOME/media/$(date '+%FT%T%z').png"
-    Shift+Print exec "grim -g '$(slurp)' $HOME/media/$(date '+%FT%T%z').png"
+    Shift+Print exec "grim -g \"$(slurp)\" $HOME/media/$(date '+%FT%T%z').png"
 }
 
 ## WM Commands
