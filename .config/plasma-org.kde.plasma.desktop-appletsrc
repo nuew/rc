@@ -15,24 +15,6 @@ location=4
 plugin=org.kde.panel
 wallpaperplugin=org.kde.image
 
-[Containments][2][Applets][22]
-immutability=1
-plugin=org.kde.redshiftControl
-
-[Containments][2][Applets][22][Configuration]
-PreloadWeight=0
-
-[Containments][2][Applets][22][Configuration][Advanced]
-latitude=40.4324
-longitude=-79.9247
-
-[Containments][2][Applets][22][Configuration][ConfigDialog]
-DialogHeight=540
-DialogWidth=720
-
-[Containments][2][Applets][22][Configuration][General]
-smoothTransitions=true
-
 [Containments][2][Applets][23]
 immutability=1
 plugin=org.kde.plasma.icon
@@ -56,7 +38,7 @@ immutability=1
 plugin=org.kde.plasma.kickoff
 
 [Containments][2][Applets][3][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 
 [Containments][2][Applets][3][Configuration][ConfigDialog]
 DialogHeight=540
@@ -70,7 +52,7 @@ menuItems=oftenUsed:t,application:t,computer:t,used:t,leave:t,bookmark:f
 global=Alt+F1
 
 [Containments][2][Applets][3][Shortcuts]
-global=Alt+F1
+global=Meta+Space
 
 [Containments][2][Applets][4]
 immutability=1
@@ -91,7 +73,7 @@ immutability=1
 plugin=org.kde.plasma.systemtray
 
 [Containments][2][Applets][6][Configuration]
-PreloadWeight=100
+PreloadWeight=92
 SystrayContainmentId=7
 
 [Containments][2][Applets][8]
@@ -100,6 +82,15 @@ plugin=org.kde.plasma.digitalclock
 
 [Containments][2][Applets][8][Configuration]
 PreloadWeight=0
+
+[Containments][2][Applets][8][Configuration][Appearance]
+enabledCalendarPlugins=/usr/lib/qt/plugins/plasmacalendarplugins/astronomicalevents.so,/usr/lib/qt/plugins/plasmacalendarplugins/holidaysevents.so
+showDate=true
+showSeconds=true
+
+[Containments][2][Applets][8][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][2][Applets][9]
 immutability=1
@@ -116,7 +107,7 @@ DialogWidth=1366
 PreloadWeight=0
 
 [Containments][2][General]
-AppletOrder=3;4;25;23;5;6;8;22;9
+AppletOrder=3;4;25;23;5;6;8;9
 
 [Containments][20]
 ItemGeometriesHorizontal=
@@ -138,6 +129,7 @@ PreloadWeight=0
 [Containments][20][General]
 ToolBoxButtonState=topright
 ToolBoxButtonX=1336
+pressToMoveHelp=false
 
 [Containments][20][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/SafeLanding/contents/images/5120x2880.jpg
@@ -175,7 +167,7 @@ immutability=1
 plugin=org.kde.plasma.volume
 
 [Containments][7][Applets][10][Configuration]
-PreloadWeight=95
+PreloadWeight=78
 
 [Containments][7][Applets][10][Configuration][ConfigDialog]
 DialogHeight=540
@@ -193,7 +185,7 @@ immutability=1
 plugin=org.kde.plasma.devicenotifier
 
 [Containments][7][Applets][12][Configuration]
-PreloadWeight=30
+PreloadWeight=59
 
 [Containments][7][Applets][13]
 immutability=1
@@ -207,7 +199,7 @@ immutability=1
 plugin=org.kde.plasma.notifications
 
 [Containments][7][Applets][14][Configuration]
-PreloadWeight=25
+PreloadWeight=92
 
 [Containments][7][Applets][15]
 immutability=1
@@ -223,26 +215,34 @@ plugin=org.kde.plasma.vault
 [Containments][7][Applets][16][Configuration]
 PreloadWeight=0
 
+[Containments][7][Applets][16][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
+
 [Containments][7][Applets][17]
 immutability=1
 plugin=org.kde.plasma.battery
 
 [Containments][7][Applets][17][Configuration]
-PreloadWeight=5
+PreloadWeight=0
+
+[Containments][7][Applets][17][Configuration][ConfigDialog]
+DialogHeight=540
+DialogWidth=720
 
 [Containments][7][Applets][18]
 immutability=1
 plugin=org.kde.plasma.bluetooth
 
 [Containments][7][Applets][18][Configuration]
-PreloadWeight=100
+PreloadWeight=0
 
 [Containments][7][Applets][19]
 immutability=1
 plugin=org.kde.plasma.networkmanagement
 
 [Containments][7][Applets][19][Configuration]
-PreloadWeight=12
+PreloadWeight=0
 
 [Containments][7][Applets][26]
 immutability=1

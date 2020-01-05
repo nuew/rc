@@ -78,6 +78,14 @@ CommandWindow2=Activate and pass click
 CommandWindow3=Activate and pass click
 CommandWindowWheel=Scroll
 
+[NightColor]
+Active=true
+LatitudeAuto=40.4442
+LatitudeFixed=40.4442
+LongitudeAuto=-79.9557
+LongitudeFixed=-79.9557
+NightTemperature=3200
+
 [Plugins]
 desktopchangeosdEnabled=true
 highlightwindowEnabled=true
