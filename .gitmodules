@@ -4,9 +4,6 @@
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/pack/plugins/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/pack/plugins/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
 [submodule ".vim/bundle/vim-characterize"]
 	path = .vim/pack/plugins/start/vim-characterize
 	url = https://github.com/tpope/vim-characterize.git
