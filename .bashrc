@@ -41,7 +41,6 @@ alias RM='rm -rf'
 alias cargo-fmt='rustup run nightly cargo fmt'
 alias dig=drill
 alias dotfiles="git --git-dir=$HOME/$dfsub/dotfiles/ --work-tree=$HOME"
-alias grep='echo "Consider using rg, or use /usr/bin/grep."'
 alias less="$PAGER"
 alias ls='ls -h --color=auto --group-directories-first'
 alias lualatex='lualatex --shell-escape'
@@ -49,7 +48,6 @@ alias nc=ncat
 alias open=xdg-open
 alias phase='curl -s http://wttr.in/Moon?m'
 alias please='sudo -- "${SHELL:-bash}" -c "$(fc -ln -1)"'
-alias rustfmt='rustup run nightly rustfmt'
 alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 alias timestamp='date +%s%3N'
 alias traceroute=tracepath
