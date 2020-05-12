@@ -24,18 +24,6 @@ au FileType tex,text,markdown setlocal tw=80 noai nocin nosi inde=
 
 " TODO Make vimdiff legible
 
-" Syntastic Options
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_style_error_symbol = "☡"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_warning_symbol = "❦"
-"let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_mode_map = { 'passive_filetypes': ['asm', 'tex'] }
-
-" Rust Options
-let g:syntastic_rust_checkers = ['cargo']
 let g:rustfmt_autosave = 1
 
 " GPG Options
