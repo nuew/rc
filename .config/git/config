@@ -7,8 +7,6 @@
 [push]
     default = simple
     gpgSign = if-asked
-[commit]
-    gpgsign = true
 [merge]
     tool = vimdiff
 [diff]
