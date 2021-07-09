@@ -10,6 +10,7 @@
 [submodule ".vim/bundle/vim-gnupg"]
 	path = .vim/pack/plugins/start/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
+        branch = main
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/pack/plugins/start/vim-sensible
 	url = https://github.com/tpope/vim-sensible.git
