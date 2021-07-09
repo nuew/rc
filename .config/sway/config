@@ -54,6 +54,6 @@ bindsym --no-warn {
 
 ## WM Commands
 bindsym --no-warn {
-    $mod+d exec "$XDG_CONFIG_HOME/sway/dmenu-desktop.pl --dmenu 'bemenu -ip $(cat /etc/hostname)'"
+    $mod+d exec "$XDG_CONFIG_HOME/sway/dmenu-desktop.pl --dmenu 'dmenu -i -p $(cat /etc/hostname)'"
     $mod+Shift+e exec "swaynag -m 'Really end your session?' -b 'Yes, end session' 'swaymsg exit' -t warning"
 }

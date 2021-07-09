@@ -24,6 +24,15 @@ au FileType tex,text,markdown setlocal tw=80 noai nocin nosi inde=
 
 " TODO Make vimdiff legible
 
+" Haskell Language Server
+if executable('hie')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'hie',
+        \ 'cmd': {server_info->['hie-wrapper', '--lsp']},
+        \ 'whitelist': ['hs', 'lhs', 'haskell'],
+        \ })
+endif
+
 let g:rustfmt_autosave = 1
 
 " GPG Options

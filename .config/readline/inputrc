@@ -1,4 +1,4 @@
-set bell-style visual
+#set bell-style visual
 set colored-completion-prefix on
 set completion-ignore-case on
 set completion-map-case on
