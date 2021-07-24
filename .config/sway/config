@@ -40,12 +40,6 @@ exec {
 }
 
 # Keybindings
-## Firefox (Wayland)
-bindsym --no-warn {
-    XF86HomePage exec "MOZ_ENABLE_WAYLAND=1 firefox"
-    XF86Search exec "MOZ_ENABLE_WAYLAND=1 firefox https://google.com/"
-}
-
 ## Screenshots
 bindsym --no-warn {
     Print exec "grim $HOME/media/$(date '+%FT%T%z').png"

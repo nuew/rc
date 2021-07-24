@@ -13,9 +13,6 @@ floating_modifier $mod
 bindsym $mod+Mod1+l exec "loginctl lock-session"
 bindsym $mod+Return exec "urxvtc -e /usr/bin/tmux attach-session"
 bindsym $mod+Shift+Return exec "urxvtc -e /bin/bash"
-bindsym XF86HomePage exec firefox
-bindsym XF86Mail exec "urxvtc -e mutt"
-bindsym XF86Search exec "firefox https://google.com/"
 
 ## Change the active window
 bindsym $mod+h focus left
@@ -102,7 +99,7 @@ bindsym $mod+Shift+a focus child
 ## Volume
 bindsym $mod+Prior exec "amixer set Master 5%+"
 bindsym $mod+Next exec "amixer set Master 5%-"
-bindsym XF86AudioMute exec "amixer set Master toggle"
+bindsym $mod+End exec "amixer set Master toggle"
 
 # Appearance
 font pango:monospace 10
