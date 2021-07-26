@@ -17,7 +17,7 @@ output "HDMI-A-2" {
 ## Keyboard
 input "1:1:AT_Translated_Set_2_keyboard" {
     xkb_layout us
-    xkb_model hpi6
+    xkb_model pc104alt
     xkb_options caps:escape
     xkb_variant alt-intl-unicode
 }
