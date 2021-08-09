@@ -24,6 +24,15 @@ au FileType tex,text,markdown setlocal tw=80 noai nocin nosi inde=
 
 " TODO Make vimdiff legible
 
+" Rust Language Server
+if executable('rust-analyzer')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'Rust Language Server',
+        \ 'cmd': {server_info->['rust-analyzer']},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+
 " Haskell Language Server
 if executable('hie')
     au User lsp_setup call lsp#register_server({
