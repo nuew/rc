@@ -1,19 +1,19 @@
 [submodule ".vim/bundle/molokai"]
 	path = .vim/pack/plugins/start/molokai
-	url = https://github.com/tomasr/molokai.git
+	url = https://github.com/tomasr/molokai
 [submodule ".vim/bundle/rust.vim"]
 	path = .vim/pack/plugins/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim.git
+	url = https://github.com/rust-lang/rust.vim
 [submodule ".vim/bundle/vim-characterize"]
 	path = .vim/pack/plugins/start/vim-characterize
-	url = https://github.com/tpope/vim-characterize.git
+	url = https://github.com/tpope/vim-characterize
 [submodule ".vim/bundle/vim-gnupg"]
 	path = .vim/pack/plugins/start/vim-gnupg
-	url = https://github.com/jamessan/vim-gnupg.git
+	url = https://github.com/jamessan/vim-gnupg
         branch = main
 [submodule ".vim/bundle/vim-sensible"]
 	path = .vim/pack/plugins/start/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
+	url = https://github.com/tpope/vim-sensible
 [submodule ".vim/pack/plugins/start/vim-lsp"]
 	path = .vim/pack/lsp/start/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
