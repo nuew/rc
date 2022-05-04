@@ -155,3 +155,4 @@ alias g++rel="g++ -std=gnu++14 $gcc_release_options"
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 unset dfsub
+source ~/.local/share/cargo/env
