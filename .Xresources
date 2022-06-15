@@ -1,5 +1,5 @@
-Xcursor.theme: Adwaita
-Xcursor.size: 16
+! Xcursor.theme: Breeze
+! Xcursor.size: 24
 
 ! URxvt config
 URxvt*background:         [90]#000000
@@ -29,7 +29,7 @@ URxvt*foreground:         #00ff00
 URxvt*imLocale:           en_US.UTF-8
 URxvt*internalBorder:     0
 URxvt*matcher*button:     1
-URxvt*perl-ext-common:    default,matcher,vtwheel,searchable-scrollback
+URxvt*perl-ext-common:    default,matcher,searchable-scrollback
 URxvt*pointerShape:       xterm
 URxvt*saveLines:          10000
 URxvt*scrollBar:          false
