@@ -3,6 +3,8 @@
 # Computer Specific Operations
 if [ "$HOSTNAME" = "nuew" ]; then
     dfsub=prog
+elif [ "$HOSTNAME" = "lyra" ]; then
+    source ~/.local/share/cargo/env
 elif [ "$HOSTNAME" = "thoth.cs.pitt.edu" ]; then
     dfsub=private
     source /opt/set_specific_profile.sh
@@ -159,4 +161,3 @@ alias g++rel="g++ -std=gnu++14 $gcc_release_options"
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 unset dfsub
-source ~/.local/share/cargo/env
