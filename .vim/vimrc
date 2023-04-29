@@ -3,19 +3,28 @@ se nocp
 " Vim Options (assumes vim-sensible)
 colo molokai_transparent
 se cf hi=10000 sc " Prompt
-se dict+=/usr/share/dict/words spl=en_us,en " Spellchecking
+se spl=en_us,en " Spellchecking
 se enc=utf-8 nostmp " Internal
 se et sts=4 sw=4 " Tabs
 "se fdm=syntax fdls=99 " Folding
 se fo=croqj si " Formatting
+se go=emgrL " Gui
 se hls ic scs " Search
 se lcs=tab:↹·,trail:␢,extends:⇉,precedes:⇇,nbsp:␣ sbr=↳\  " Display
 se lz tf " Drawing
 se mouse=a ttymouse=xterm2 " Mouse
 se nobomb " Encoding
 se nosol " Movement
-se udir=~/.vim/undo udf " Undo
-se vif=~/.vim/info "viminfo
+se udf " Undo
+
+" os-specific
+if has("unix")
+    se dict+=/usr/share/dict/words
+    se udir=~/.vim/undo vif=~/.vim/info
+elseif has("win32")
+    se gfn=Cascadia_Code:h9:qCLEARTYPE
+    se udir=~/vimfiles/undo vif=~/vimfiles/info
+endif
 
 " Filetype Options
 au FileType gitcommit,mail,tex,text,markdown setlocal spell complete+=kspell
@@ -25,23 +34,6 @@ au FileType tex,text,markdown setlocal tw=80 noai nocin nosi inde=
 " TODO Make vimdiff legible
 
 " Rust Language Server
-if executable('rust-analyzer')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'Rust Language Server',
-        \ 'cmd': {server_info->['rust-analyzer']},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
-
-" Haskell Language Server
-if executable('hie')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'hie',
-        \ 'cmd': {server_info->['hie-wrapper', '--lsp']},
-        \ 'whitelist': ['hs', 'lhs', 'haskell'],
-        \ })
-endif
-
 let g:rustfmt_autosave = 1
 
 " GPG Options
