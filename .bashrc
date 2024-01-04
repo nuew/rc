@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # Computer Specific Operations
-if [ "$HOSTNAME" = "nuew" ]; then
+if [ "$HOSTNAME" = "nuew" -o "$HOSTNAME" = "lyra" ]; then
     dfsub=prog
-elif [ "$HOSTNAME" = "lyra" ]; then
-    source ~/.local/share/cargo/env
 elif [ "$HOSTNAME" = "thoth.cs.pitt.edu" ]; then
     dfsub=private
     source /opt/set_specific_profile.sh
