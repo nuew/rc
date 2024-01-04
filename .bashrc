@@ -28,7 +28,7 @@ function ps1_maybe_ev {
     local ev=$?; [ $ev != 0 ] && echo -e " $ev"
 }
 
-export EDITOR=vim PAGER='less -RM' SHELL=bash
+export EDITOR=nvim PAGER='less -RM' SHELL=bash
 export HISTSIZE=10000 HISTCONTROL=ignoredups
 export PATH="$HOME/.local/bin:$PATH"
 export MANPATH="$HOME/.local/share/man:$MANPATH"
@@ -57,6 +57,7 @@ alias rc="git --git-dir=$HOME/$dfsub/rc/ --work-tree=$HOME"
 alias sprunge='curl -F "sprunge=<-" http://sprunge.us'
 alias timestamp='date +%s%3N'
 alias traceroute=tracepath
+alias vim=nvim
 alias weather='curl -s http://wttr.in/Pittsburgh?m'
 
 # Functions
