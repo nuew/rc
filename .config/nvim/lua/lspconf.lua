@@ -1,8 +1,8 @@
 local lspconfig = require 'lspconfig'
 lspconfig.clangd.setup {}
+lspconfig.digestif.setup {}
 lspconfig.hls.setup { filetypes = { 'haskell', 'lhaskell', 'cabal' } }
 lspconfig.rust_analyzer.setup {}
-lspconfig.texlab.setup {}
 
 -- Global mappings. See `:help vim.diagnostic.*` for documentation on any of
 -- the below functions
