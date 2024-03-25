@@ -25,10 +25,10 @@ dig @> 8636 " U+21BB ↻ CLOCKWISE OPEN CIRCLE ARROW
 " Plugin options
 let g:awk_is_gawk = 1
 let g:changelog_username = 'Emma Welker <code@nuew.net>'
+let g:coq_settings = { 'auto_start': 'shut-up', 'xdg': v:true }
 let g:rst_style = 1
 let g:rustfmt_autosave = 1
 let g:sql_type_default = 'postgresql'
 
 " load lsp configuration and lsp_signature
 lua require 'lspconf'
-lua require'lsp_signature'.setup {}

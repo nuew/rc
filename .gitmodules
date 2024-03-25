@@ -1,3 +1,9 @@
 [submodule ".vim/bundle/vim-characterize"]
 	path = .local/share/nvim/site/pack/plugins/start/vim-characterize
 	url = https://github.com/tpope/vim-characterize
+[submodule ".local/share/nvim/site/pack/plugins/start/coq_nvim"]
+	path = .local/share/nvim/site/pack/plugins/start/coq_nvim
+	url = https://github.com/ms-jpq/coq_nvim.git
+[submodule ".local/share/nvim/site/pack/plugins/start/coq.artifacts"]
+	path = .local/share/nvim/site/pack/plugins/start/coq.artifacts
+	url = https://github.com/ms-jpq/coq.artifacts.git
