@@ -1,9 +1,27 @@
 [submodule ".vim/bundle/vim-characterize"]
 	path = .local/share/nvim/site/pack/plugins/start/vim-characterize
 	url = https://github.com/tpope/vim-characterize
-[submodule ".local/share/nvim/site/pack/plugins/start/coq_nvim"]
-	path = .local/share/nvim/site/pack/plugins/start/coq_nvim
-	url = https://github.com/ms-jpq/coq_nvim.git
-[submodule ".local/share/nvim/site/pack/plugins/start/coq.artifacts"]
-	path = .local/share/nvim/site/pack/plugins/start/coq.artifacts
-	url = https://github.com/ms-jpq/coq.artifacts.git
+[submodule ".local/share/nvim/site/pack/plugins/start/nvim-cmp"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp.git
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-nvim-lsp"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp.git
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-buffer"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer.git
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-path"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-path
+	url = https://github.com/hrsh7th/cmp-path
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-nvim-lsp-signature-help"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-nvim-lsp-signature-help
+	url = https://github.com/hrsh7th/cmp-nvim-lsp-signature-help.git
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-vsnip"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-vsnip
+	url = https://github.com/hrsh7th/cmp-vsnip.git
+[submodule ".local/share/nvim/site/pack/plugins/start/vim-vsnip"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/vim-vsnip
+	url = https://github.com/hrsh7th/vim-vsnip.git
+[submodule ".local/share/nvim/site/pack/plugins/start/cmp-cmdline"]
+	path = .local/share/nvim/site/pack/cmp-nvim/start/cmp-cmdline
+	url = https://github.com/hrsh7th/cmp-cmdline

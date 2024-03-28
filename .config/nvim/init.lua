@@ -26,7 +26,6 @@ vim.cmd('digraphs @> 8636') -- U+21BB ↻ CLOCKWISE OPEN CIRCLE ARROW
 -- Plugin Options
 vim.g.awk_is_gawk = 1
 vim.g.changelog_username = 'Emma Welker <code@nuew.net>'
-vim.g.coq_settings = { auto_start = 'shut-up', xdg = true }
 vim.g.rst_style = 1
 vim.g.rustfmt_autosave = 1
 vim.g.sql_type_default = 'postgresql'
@@ -34,4 +33,4 @@ vim.g.sql_type_default = 'postgresql'
 -- Delete undofiles older than one week
 os.execute('/usr/bin/find ' .. vim.opt.undodir:get()[1] .. ' -mtime +7 -delete')
 
-require 'lspconf' -- configure LSP and Coq
+require 'lsp' -- configure LSP and nvim-cmp
