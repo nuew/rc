@@ -1,15 +1,16 @@
 -- General Configuration
+vim.opt.completeopt = 'menu,menuone,preview,noselect' -- insert-mode completion options
 vim.opt.confirm = true -- confirm quit/new file with dialog instead of refusing
-vim.opt.shelltemp = false -- Use pipes instead of shell temporaries where possible
 vim.opt.formatoptions = 'tro/qnj' -- Automatic formatting options; see :help fo-table
                                   -- we can safely use 't' as all code ftplugins swap
                                   -- that for 'c' automatically
 vim.opt.guioptions = 'emgrL' -- Graphical mode options; see :help guioptions
 vim.opt.ignorecase = true -- Ignore case when searching
-vim.opt.smartcase = true -- Ignore 'ignorecase' when searching with uppercase characters
 vim.opt.listchars = 'tab:↹·,trail:␢,extends:⇉,precedes:⇇,nbsp:␣' -- Characters for :list
+vim.opt.shelltemp = false -- Use pipes instead of shell temporaries where possible
 vim.opt.showbreak = '↳ ' -- String to show for wrapped lines
-vim.opt.undofile = true
+vim.opt.smartcase = true -- Ignore 'ignorecase' when searching with uppercase characters
+vim.opt.undofile = true -- use an undofile
 
 -- Set tabs to 4 spaces
 vim.opt.expandtab = true
@@ -33,4 +34,4 @@ vim.g.sql_type_default = 'postgresql'
 -- Delete undofiles older than one week
 os.execute('/usr/bin/find ' .. vim.opt.undodir:get()[1] .. ' -mtime +7 -delete')
 
-require 'lsp' -- configure LSP and nvim-cmp
+require 'lsp' -- configure LSP and nvim-cmp, as their configuration files are… big
