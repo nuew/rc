@@ -74,7 +74,8 @@ function gendiceware { # Generate a diceware-style password
     local l=$1
     [ "$l" == "" ] && l=6
 
-    sed "/'/d" /usr/share/dict/words | \
+    curl -sS https://www.eff.org/files/2016/07/18/eff_large_wordlist.txt | \
+        awk '{ print $2 }' | \
         shuf -rn ${l} --random-source=/dev/urandom | \
         tr [:upper:] [:lower:] | \
         sed -z 's/\n//g'
