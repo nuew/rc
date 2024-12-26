@@ -1,4 +1,4 @@
-umask 0077
+umask 0027
 
 set -o allexport
 source <(cat $HOME/.config/environment.d/*)

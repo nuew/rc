@@ -1,4 +1,5 @@
 #!/bin/bash
+umask 0027
 
 # Computer Specific Operations
 if [ "$HOSTNAME" = "nuew" -o "$HOSTNAME" = "lyra" ]; then
