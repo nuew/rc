@@ -40,6 +40,7 @@ export LESSHISTFILE=-
 # Aliases
 alias RM='rm -rf'
 alias cargo-fmt='rustup run nightly cargo fmt'
+alias dhex='dhex -f $HOME/.config/dhexrc'
 alias dig=drill
 alias ip='ip -c'
 alias less="$PAGER"
