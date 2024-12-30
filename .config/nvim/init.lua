@@ -36,7 +36,7 @@ vim.g.sql_type_default = 'postgresql'
 os.execute('/usr/bin/find ' .. vim.opt.undodir:get()[1] .. ' -mtime +7 -delete')
 
 -- don't bother configuring LSP on servers
-local servers = {"deneb"};
-if servers[os.getenv("HOSTNAME")] ~= nil then
+local servers = {deneb = 1};
+if servers[io.lines('/etc/hostname')()] == nil then
     require 'lsp' -- configure LSP and nvim-cmp, as their configuration files are… big
 end
