@@ -35,4 +35,8 @@ vim.g.sql_type_default = 'postgresql'
 -- Delete undofiles older than one week
 os.execute('/usr/bin/find ' .. vim.opt.undodir:get()[1] .. ' -mtime +7 -delete')
 
-require 'lsp' -- configure LSP and nvim-cmp, as their configuration files are… big
+-- don't bother configuring LSP on servers
+local servers = {"deneb"};
+if servers[os.getenv("HOSTNAME")] ~= nil then
+    require 'lsp' -- configure LSP and nvim-cmp, as their configuration files are… big
+end
