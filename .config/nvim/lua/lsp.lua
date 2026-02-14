@@ -2,8 +2,7 @@
 local cmp = require 'cmp'
 
 cmp.setup {
-    -- TODO replace with vim.snippet.expand(args.body) for native in v0.10
-    snippet = { expand = function(args) vim.fn['vsnip#anonymous'](args.body) end },
+    snippet = { expand = function(args) vim.snippet.expand(args.body) end },
     mapping = cmp.mapping.preset.insert {
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -15,7 +14,9 @@ cmp.setup {
         { name = 'nvim_lsp' },
         { name = 'nvim_lsp_signature_help' }
     }, {
-        { name = 'buffer' }
+        { name = 'buffer' },
+        { name = 'path' },
+        { name = 'vsnip' },
     }),
 }
 
@@ -37,7 +38,6 @@ cmp.setup.cmdline(':', {
 })
 
 -- setup individual LSP servers
-local lspconfig = require 'lspconfig'
 local lsp_attach = function(client, buf)
     function buf_setopt(opt, action)
         return vim.api.nvim_buf_set_option(buf, opt, action)
@@ -71,13 +71,13 @@ local lsp_attach = function(client, buf)
         vim.lsp.buf.format { async = true }
     end, "Format File")
 end
-lspconfig.util.default_config = vim.tbl_extend('force', lspconfig.util.default_config, {
+
+vim.lsp.config('*', {
     capabilities = require('cmp_nvim_lsp').default_capabilities(),
     on_attach = lsp_attach
 })
-
-lspconfig.pylsp.setup {}
-lspconfig.clangd.setup {}
-lspconfig.digestif.setup {}
-lspconfig.hls.setup { filetypes = { 'haskell', 'lhaskell', 'cabal' } }
-lspconfig.rust_analyzer.setup {}
+vim.lsp.config('pylsp', {})
+vim.lsp.config('clangd', {})
+vim.lsp.config('digestif', {})
+vim.lsp.config('hls', { filetypes = { 'haskell', 'lhaskell', 'cabal' } })
+vim.lsp.config('rust_analyzer', {})
