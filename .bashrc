@@ -154,10 +154,10 @@ gcc_cpp_development_options="$gcc_development_options \
   -Wuseless-cast \
   -Wzero-as-null-pointer-constant \
 "
-alias gcc="gcc -std=gnu11 $gcc_c_development_options"
-alias gccrel="gcc -std=gnu11 $gcc_release_options"
-alias g++="g++ -std=gnu++14 $gcc_cpp_development_options"
-alias g++rel="g++ -std=gnu++14 $gcc_release_options"
+alias gcc="gcc -std=gnu23 $gcc_c_development_options"
+alias gccrel="gcc -std=gnu23 $gcc_release_options"
+alias g++="g++ -std=gnu++23 $gcc_cpp_development_options"
+alias g++rel="g++ -std=gnu++23 $gcc_release_options"
 
 # Programmable Completions
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
