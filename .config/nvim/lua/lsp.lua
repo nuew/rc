@@ -37,47 +37,41 @@ cmp.setup.cmdline(':', {
     matching = { disallow_symbol_nonprefix_matching = false },
 })
 
--- setup individual LSP servers
-local lsp_attach = function(client, buf)
-    function buf_setopt(opt, action)
-        return vim.api.nvim_buf_set_option(buf, opt, action)
-    end
-    function buf_setkey(key, action, desc)
-        return vim.keymap.set('n', key, action, { buffer = buf, desc = desc })
-    end
-    
-    buf_setopt('formatexpr', 'v:lua.vim.lsp.formatexpr()')
-    buf_setopt('omnifunc', 'v:lua.vim.lsp.omnifunc')
-    buf_setopt('tagfunc', 'v:lua.vim.lsp.tagfunc')
+-- setup LSP servers
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('my.lsp', {}),
+    callback = function(args)
+        function buf_setopt(opt, action)
+            return vim.api.nvim_buf_set_option(args.buf, opt, action)
+        end
+        function buf_setkey(key, action, desc)
+            return vim.keymap.set('n', key, action, { buffer = args.buf, desc = desc })
+        end
+        
+        buf_setopt('formatexpr', 'v:lua.vim.lsp.formatexpr()')
+        buf_setopt('omnifunc', 'v:lua.vim.lsp.omnifunc')
+        buf_setopt('tagfunc', 'v:lua.vim.lsp.tagfunc')
 
-    buf_setkey('gD', vim.lsp.buf.declaration, "Go to Declaration")
-    buf_setkey('gd', vim.lsp.buf.definition, "Go to Definition")
-    buf_setkey('gy', vim.lsp.buf.type_definition, "Go to Type Definition")
-    buf_setkey('K', vim.lsp.buf.hover, "Hover Information")
-    buf_setkey('<leader>ck', vim.lsp.buf.signature_help, "Signature Help")
-    buf_setkey('<leader>qf', vim.diagnostic.setqflist, "Quickfix Diagnostics")
-    buf_setkey('<leader>ql', vim.diagnostic.setloclist, "Diagnostics to Location List")
-    buf_setkey('<leader>qs', vim.diagnostic.show, "Show Diagnostics")
-    buf_setkey('[d', vim.diagnostic.goto_prev, "Previous Diagnostic")
-    buf_setkey(']d', vim.diagnostic.goto_next, "Next Diagnostic")
-    buf_setkey('<leader>e', vim.diagnostic.open_float, "Explain Diagnostic")
-    buf_setkey('<leader>ca', vim.lsp.buf.code_action, "Code Action")
-    buf_setkey('<leader>r', vim.lsp.buf.rename, "Rename")
-    buf_setkey('<leader>fs', vim.lsp.buf.document_symbol, "Document Symbols")
-    buf_setkey('<leader>fs', vim.lsp.buf.workspace_symbol, "Workspace Symbols")
-    buf_setkey('<leader>fi', vim.lsp.buf.implementation, "List Implementations")
-    buf_setkey('<leader>fr', vim.lsp.buf.references, "List References")
-    buf_setkey('<leader>gq', function()
-        vim.lsp.buf.format { async = true }
-    end, "Format File")
-end
-
-vim.lsp.config('*', {
-    capabilities = require('cmp_nvim_lsp').default_capabilities(),
-    on_attach = lsp_attach
+        buf_setkey('gD', vim.lsp.buf.declaration, "Go to Declaration")
+        buf_setkey('gd', vim.lsp.buf.definition, "Go to Definition")
+        buf_setkey('gy', vim.lsp.buf.type_definition, "Go to Type Definition")
+        buf_setkey('K', vim.lsp.buf.hover, "Hover Information")
+        buf_setkey('<leader>ck', vim.lsp.buf.signature_help, "Signature Help")
+        buf_setkey('<leader>qf', vim.diagnostic.setqflist, "Quickfix Diagnostics")
+        buf_setkey('<leader>ql', vim.diagnostic.setloclist, "Diagnostics to Location List")
+        buf_setkey('<leader>qs', vim.diagnostic.show, "Show Diagnostics")
+        buf_setkey('[d', function() vim.diagnostic.jump { count = -1 } end, "Previous Diagnostic")
+        buf_setkey(']d', function() vim.diagnostic.jump { count = 1 } end, "Next Diagnostic")
+        buf_setkey('<leader>e', vim.diagnostic.open_float, "Explain Diagnostic")
+        buf_setkey('<leader>ca', vim.lsp.buf.code_action, "Code Action")
+        buf_setkey('<leader>r', vim.lsp.buf.rename, "Rename")
+        buf_setkey('<leader>fs', vim.lsp.buf.document_symbol, "Document Symbols")
+        buf_setkey('<leader>fs', vim.lsp.buf.workspace_symbol, "Workspace Symbols")
+        buf_setkey('<leader>fi', vim.lsp.buf.implementation, "List Implementations")
+        buf_setkey('<leader>fr', vim.lsp.buf.references, "List References")
+        buf_setkey('<leader>gq', function() vim.lsp.buf.format { async = true } end, "Format File")
+    end
 })
-vim.lsp.config('pylsp', {})
-vim.lsp.config('clangd', {})
-vim.lsp.config('digestif', {})
+vim.lsp.config('*', { capabilities = require('cmp_nvim_lsp').default_capabilities() })
 vim.lsp.config('hls', { filetypes = { 'haskell', 'lhaskell', 'cabal' } })
-vim.lsp.config('rust_analyzer', {})
+vim.lsp.enable({'pylsp', 'clangd', 'digestif', 'hls', 'rust_analyzer'})
